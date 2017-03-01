@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'favorites/foods'
+
+  get 'favorites/movies'
+
   root 'static_pages#home'
   
   get 'static_pages/home'
