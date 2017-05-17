@@ -6,6 +6,14 @@ Rails.application.routes.draw do
   get 'favorites/foods'
 
   get 'favorites/movies'
+  
+  get '/movies', to: "movies#index", as: "movies"
+  get '/movies/new', to:"movies#new"
+  post '/movies/create', to:"movies#create"
+  get '/movies/create', to:"movies#create" 
+  get 'movies/:id', to: "movies#show"
+  get 'movies/:id/edit', to:"movies#edit"
+  patch '/movies/:id', to: "movies#update"
 
   root 'static_pages#home'
   get  '/help',    to: 'static_pages#help'

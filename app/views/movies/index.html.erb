@@ -1,0 +1,15 @@
+<h1>Movies</h1>
+<%= link_to "Create New Movie", "/movies/new", class: "btn btn-sm btn-primary" %>
+
+<% @movies.each do |movie| %>
+  <hr>
+    <%= link_to "Details", "movies/#{movie.id}", class: "btn btn-sm btn-success pull-right" %>
+    <%= link_to "Edit", "movies/#{movie.id}/edit", class: "btn btn-sm btn-info pull-right" %>
+    <%= link_to "Delete", "????", class: "btn btn-sm btn-danger pull-right" %>
+
+    <strong><%=movie.title %></strong>
+    <br>
+    <em><%=movie.genre %></em>
+    <br>
+    <em><%=movie.created_at %></em>
+<% end %>
