@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
   
   def show
 			@movie = Movie.find(params[:id])
-		end
+	 end
 		
 	def edit
 	    @movie = Movie.find(params[:id])

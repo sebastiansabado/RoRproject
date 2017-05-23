@@ -1,0 +1,12 @@
+<h1 style="text-align:left;">Name: <%= @actor.name%></h1>
+Gender: <em><%= @actor.gender %></em>
+<br>
+
+<% if @actor.zodiac_sign.present? %>
+
+   Zodiac Sign:<%= @actor.zodiac_sign %>
+<% end %>
+<hr>
+<br>
+<br>
+Go back to the <a href='/actors'>main actors</a> page.

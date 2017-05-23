@@ -1,0 +1,24 @@
+<h1>Edit Actor Form</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form action="/actors/<%= @actor.id %>" method="post">
+      <input type="hidden" name="_method" value="patch" >
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      Actor name: <input type="text" name="name" value="<%= @actor.name %>">
+      <br>
+      Gender: 
+        <% if @actor.gender == "m" %>
+              <input type="radio" name="gender" value="m" selected> Male
+              <input type="radio" name="gender" value="f"> Female
+        <% elsif @actor.gender == "f" %>
+              <input type="radio" name="gender" value="m"> Male
+              <input type="radio" name="gender" value="f" selected> Female
+        <% end %>
+      <br>
+    
+      Zodiac Sign: <input type="text" name="zodiac_sign" value="<%= @actor.zodiac_sign %>">
+      <br>
+      <input type="submit" value="Update Now" class="btn btn-sm btn-primary">
+   </form>
+ </div>
+</div>

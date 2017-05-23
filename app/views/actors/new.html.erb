@@ -1,0 +1,19 @@
+<h1>New Actor Form</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form action="/actors/create" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      Movie title: <input type="text" name="name" value="">
+      <br>
+      Gender:
+      <br>
+             Male <input type="radio" name="gender" value="m">  
+             Female <input type="radio" name="gender" value="f"> 
+      <br>
+      Zodiac Sign: <input type="text" name="zodiac_sign" value="">
+      <br>
+      <input type="submit" value="Create Now" class="btn btn-sm btn-primary">
+   </form>
+ </div>
+</div>

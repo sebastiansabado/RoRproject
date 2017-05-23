@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'actors/index'
+
   get 'sessions/new'
 
   get 'users/new'
@@ -7,12 +9,22 @@ Rails.application.routes.draw do
 
   get 'favorites/movies'
   
+ #Homework Actors Section
+ get '/actors', to: "actors#index"
+ get '/actors/new', to: "actors#new"
+ post '/actors/create', to:"actors#create"
+ get '/actors/:id/edit', to:"actors#edit"
+ get '/actors/:id', to: "actors#show"
+ patch '/actors/:id', to: "actors#update"
+ 
+ 
+ #Class work section : MOVIES 
   get '/movies', to: "movies#index", as: "movies"
   get '/movies/new', to:"movies#new"
   post '/movies/create', to:"movies#create"
   get '/movies/create', to:"movies#create" 
-  get 'movies/:id', to: "movies#show"
-  get 'movies/:id/edit', to:"movies#edit"
+  get '/movies/:id', to: "movies#show"
+  get '/movies/:id/edit', to:"movies#edit"
   patch '/movies/:id', to: "movies#update"
 
   root 'static_pages#home'
