@@ -4,6 +4,7 @@ class MoviesController < ApplicationController
   end
   
   def new
+    @movie = Movie.new
   end
   
   def create
@@ -27,10 +28,6 @@ class MoviesController < ApplicationController
 	end
 	
 	def update
-	   @movie = Movie.find(params[:id])
-	   @movie.update(title: params[:title],
-                   genre: params[:genre],
-                   year_released: params[:year_released],
-                   info_url: params[:info_url])
+	   params.require(:movie).permit(:title, :genre, :year_released, :info_url)
 	end
 end

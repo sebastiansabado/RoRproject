@@ -1,23 +1,14 @@
 <h1>Edit Movie Form</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-	<form action="/movies/<%= @movie.id %>" method="post">
-  	<input type="hidden" name="_method" value="patch" >
-  	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  	Movie title: <input type="text" name="title" value="<%= @movie.title %>">
-  	<br>
-  	Genre: <select name="genre">
-          	<option value="action">Action</option>
-          	<option value="comedy">Comedy</option>
-          	<option value="documentary">Documentary</option>
-        	</select>
-  	<br>
-  	Year Release: <input type="text" name="year_released" value="<%= @movie.year_released %>">
-  	<br>
-  	
-  	Info URL: <input type="text" name="info_url" value="<%= @movie.info_url %>">
-  	<br><br>
-  	<input type="submit" value="Update Now" class="btn btn-sm btn-primary">
-   </form>
+	<%= form_for(@movie) do |f| %>
+    Movie title: <%= f.text_field :title %><br>
+    Genre: <%= f.select :genre, [['- select a genre -', ''],
+    ['Action', 'action'], ['Comedy', 'comedy'], ['Documentary', 'documentary'], ['Drama', 'drama']] %><br>
+    Year release: <%= f.text_field :year_released %><br>
+    More info url: <%= f.text_field :info_url %>
+    <br><br>
+    <%= f.submit "Save Movie", class: "btn btn-sm btn-primary" %>
+  <% end %>
  </div>
 </div>

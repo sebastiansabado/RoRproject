@@ -17,17 +17,19 @@ Rails.application.routes.draw do
  get '/actors/:id', to: "actors#show"
  patch '/actors/:id', to: "actors#update"
  delete '/actors/:id', to: "actors#delete"
+ resources :actors
  
  
  #Class work section : MOVIES 
-  get '/movies', to: "movies#index", as: "movies"
-  get '/movies/new', to:"movies#new"
-  post '/movies/create', to:"movies#create"
-  get '/movies/create', to:"movies#create" 
-  get '/movies/:id', to: "movies#show"
-  get '/movies/:id/edit', to:"movies#edit"
-  patch '/movies/:id', to: "movies#update"
-  delete '/movies/:id', to: "movies#delete"
+#   get '/movies', to: "movies#index", as: "movies"
+#   get '/movies/new', to:"movies#new"
+#   post '/movies/create', to:"movies#create"
+#   get '/movies/create', to:"movies#create" 
+#   get '/movies/:id', to: "movies#show"
+#   get '/movies/:id/edit', to:"movies#edit"
+#   patch '/movies/:id', to: "movies#update"
+#   delete '/movies/:id', to: "movies#delete"
+  resources :movies
   
 
   root 'static_pages#home'
