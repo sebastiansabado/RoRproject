@@ -15,13 +15,15 @@ class MoviesController < ApplicationController
   
   def show
 			@movie = Movie.find(params[:id])
-	 end
+	end
 		
 	def edit
 	    @movie = Movie.find(params[:id])
 	end
 	
-	def delete
+	 def delete
+    @movie = Movie.find(params[:id])
+    @movie.destroy
 	end
 	
 	def update

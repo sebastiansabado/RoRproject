@@ -10,3 +10,4 @@ Gender: <em><%= @actor.gender %></em>
 <br>
 <br>
 Go back to the <a href='/actors'>main actors</a> page.
+<%= link_to "Delete", "/actors/#{@actor.id}", method: :delete, class: "btn btn-sm btn-danger pull-right" %>

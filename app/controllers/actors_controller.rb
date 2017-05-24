@@ -29,4 +29,9 @@ class ActorsController < ApplicationController
                   gender: params[:gender],
                   zodiac_sign: params[:zodiac_sign])
   end
+  
+  def delete
+    @actor = Actor.find(params[:id])
+    @actor.destroy
+  end
 end

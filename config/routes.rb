@@ -16,6 +16,7 @@ Rails.application.routes.draw do
  get '/actors/:id/edit', to:"actors#edit"
  get '/actors/:id', to: "actors#show"
  patch '/actors/:id', to: "actors#update"
+ delete '/actors/:id', to: "actors#delete"
  
  
  #Class work section : MOVIES 
@@ -26,6 +27,8 @@ Rails.application.routes.draw do
   get '/movies/:id', to: "movies#show"
   get '/movies/:id/edit', to:"movies#edit"
   patch '/movies/:id', to: "movies#update"
+  delete '/movies/:id', to: "movies#delete"
+  
 
   root 'static_pages#home'
   get  '/help',    to: 'static_pages#help'

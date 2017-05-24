@@ -17,3 +17,4 @@ Genre: <em><%= @movie.genre %></em>
    More Info:<%= link_to "Click Here", @movie.info_url %>
    <br>
 <%= link_to "Back to listings", movies_path %>
+<%= link_to "Delete", "/movies/#{@movie.id}", method: :delete, class: "btn btn-sm btn-danger pull-right" %>
