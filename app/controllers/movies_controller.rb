@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
   
   def show
 			@movie = Movie.find(params[:id])
-	end
+  end
 		
 	def edit
 	    @movie = Movie.find(params[:id])
@@ -25,9 +25,10 @@ class MoviesController < ApplicationController
 	 def delete
     @movie = Movie.find(params[:id])
     @movie.destroy
-	end
+	 end
 	
 	def update
-	   params.require(:movie).permit(:title, :genre, :year_released, :info_url)
+	   @movie = Movie.find(params[:id])
+	   @movie.update(params.require(:movie).permit(:title, :genre, :year_released, :info_url))
 	end
 end
