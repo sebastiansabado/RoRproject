@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
-  get 'actors/index'
-
-  get 'sessions/new'
-
-  get 'users/new'
-
+  
+  
+  # get '/contacts', to: "contacts#index"
+  # get '/contacts/new', to: 'contacts#new'
+  # get '/contacts/create', to: 'contacts#create'
+  # get '/contacts/:id', to: 'contacts#show'
+  # get '/contacts/:id/edit', to: 'contacts#edit'
+  # patch '/contacts/:id', to: 'contacts#update'
+  # delete '/contacts/:id', to: 'contacts#destroy'
+  resources :contacts
+ 
+  
+  
+# Exercises  
   get 'favorites/foods'
-
   get 'favorites/movies'
   
  #Homework Actors Section

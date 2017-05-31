@@ -1,0 +1,12 @@
+<h1>Contacts</h1>
+<%= link_to "Create a New Contact", "/contacts/new", class: "btn btn-sm btn-primary" %>
+<% @contacts.each do |contact| %>
+  <hr>
+    <%= link_to "Details", "contacts/#{contact.id}", class: "btn btn-sm btn-success pull-right" %>
+    <%= link_to "Edit", "contacts/#{contact.id}/edit", class: "btn btn-sm btn-info pull-right" %>
+    <strong><%= contact.last_name %>, <%= contact.first_name %></strong>
+    <br>
+    <em><%=contact.email %></em>
+    <br>
+    <em><%=contact.phone_number %></em>
+<% end %>

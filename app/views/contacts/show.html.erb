@@ -1,0 +1,10 @@
+<h1 style="text-align:left;"><%= @contact.last_name%>,<%= @contact.first_name%></h1>
+<br>
+    <strong>Email:</strong><em><%=@contact.email %></em>
+    <br>
+    <strong>Phone Number:</strong><em><%=@contact.phone_number %></em>
+    <br>
+    <br>
+    
+<%= link_to "Back to Rolodex", contacts_path %>
+<%= link_to "Delete", "/contacts/#{@contact.id}", method: :delete, class: "btn btn-sm btn-danger pull-right" %>

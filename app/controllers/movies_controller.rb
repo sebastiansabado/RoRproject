@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   def index
 		@movies = Movie.where( "title LIKE ?", "#{params[:start]}%").order(id: :desc)
   end
-  
+
   def new
     @movie = Movie.new
   end
