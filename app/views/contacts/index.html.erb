@@ -1,4 +1,13 @@
 <h1>Contacts</h1>
+<div class="container">
+   <div class="col-md-6 col-md-offset-3">
+<%= form_tag(contacts_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Contacts by NAME or NUMBER" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+  </div>
+</div>
+
 <%= link_to "Create a New Contact", "/contacts/new", class: "btn btn-sm btn-primary" %>
 <% @contacts.each do |contact| %>
   <hr>
