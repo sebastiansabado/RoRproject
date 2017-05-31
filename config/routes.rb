@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   get 'favorites/movies'
   
  #Homework Actors Section
- get '/actors', to: "actors#index"
- get '/actors/new', to: "actors#new"
- post '/actors/create', to:"actors#create"
- get '/actors/:id/edit', to:"actors#edit"
- get '/actors/:id', to: "actors#show"
- patch '/actors/:id', to: "actors#update"
- delete '/actors/:id', to: "actors#delete"
+get '/actors', to: "actors#index"
+get '/actors/new', to: "actors#new"
+post '/actors/create', to:"actors#create"
+get '/actors/:id/edit', to:"actors#edit"
+get '/actors/:id', to: "actors#show"
+patch '/actors/:id', to: "actors#update"
+delete '/actors/:id', to: "actors#destroy"
  resources :actors
  
  

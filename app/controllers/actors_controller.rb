@@ -30,7 +30,7 @@ class ActorsController < ApplicationController
                   zodiac_sign: params[:zodiac_sign])
   end
   
-  def delete
+  def destroy
     @actor = Actor.find(params[:id])
     @actor.destroy
   end

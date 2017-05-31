@@ -1,6 +1,11 @@
-<h1>Movies</h1>
-<%= link_to "Create New Movie", "/movies/new", class: "btn btn-sm btn-primary" %>
 
+<% 'a'.upto('z') do | letter| %>
+  <a href="movies?start=<%= letter %>"><%= letter %></a>
+<% end %>
+<h1>Movies</h1>
+<em>There are <%= @movies.length %> movie(s) in the database</em>
+<br>
+<%= link_to "Create New Movie", "/movies/new", class: "btn btn-sm btn-primary" %>
 <% @movies.each do |movie| %>
   <hr>
     <%= link_to "Details", "movies/#{movie.id}", class: "btn btn-sm btn-success pull-right" %>
