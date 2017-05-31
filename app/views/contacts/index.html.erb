@@ -2,7 +2,7 @@
 <div class="container">
    <div class="col-md-6 col-md-offset-3">
 <%= form_tag(contacts_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Contacts by NAME or NUMBER" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Contacts by NAME, NUMBER or EMAIL ADDRESS" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
   </div>
