@@ -2,9 +2,9 @@ class ContactsController < ApplicationController
   def index
       
       if params[:search]
-        @contacts = Contact.search(params[:search]).order("created_at DESC")
+        @contacts = Contact.search(params[:search]).order("created_at ASC")
       else
-        @contacts = Contact.all().order(last_name: :ASC)
+        @contacts = Contact.all().order(created_at: :ASC)
       end
       
       if @contacts.blank? 
